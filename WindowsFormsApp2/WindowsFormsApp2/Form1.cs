@@ -65,6 +65,14 @@ namespace WindowsFormsApp2
                 SelectName2.Add($"{client.Name}, {client.Adress.ToUpper()}");
             }
             label2.Text = string.Join("   ,", SelectName2.ToArray());
+            
+            var LastTry = new ArrayList();
+            foreach (Order order in SuccsessfulWork.OrderList)
+            {
+                LastTry.Add($"{order.ProductName.Trim()},{order.IsDelivered},{order.ProductName.Length > 442}");
+            }
+            label4.Text = string.Join("  ,  ", LastTry.ToArray());
+
 
         }
 
