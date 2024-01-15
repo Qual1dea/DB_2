@@ -73,6 +73,9 @@ namespace WindowsFormsApp2
             }
             label4.Text = string.Join("  ,  ", LastTry.ToArray());
 
+            var Viborka11 = SuccsessfulWork.OrderList.Cast<Order>()
+                 .Select(order=>$"{order.ProductName.Trim()},{order.IsDelivered},{order.ProductName.Length > 442}");
+            label3.Text = string.Join("  ,  ", Viborka11);
 
         }
 
